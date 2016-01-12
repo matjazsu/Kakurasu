@@ -1,0 +1,2 @@
+# Kakurasu
+Kakurasu java application.
