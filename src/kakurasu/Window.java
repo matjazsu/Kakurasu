@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
 /**
@@ -272,6 +273,7 @@ public class Window extends javax.swing.JFrame {
         Field field = this.m_Fields[i][j];     
         
         if(field.f_isBlue){
+            btn.setOpaque(true);
             btn.setBackground(Color.BLUE);
             this.m_Current++;
             if(this.m_Current == this.m_Total){
@@ -281,6 +283,7 @@ public class Window extends javax.swing.JFrame {
         }
         else{
             btn.setText("X");
+            btn.setOpaque(true);
             btn.setBackground(Color.red);
             JOptionPane.showMessageDialog(this, "You lost!", "Kakurasu", WIDTH);
             showSolution(false);
@@ -291,6 +294,7 @@ public class Window extends javax.swing.JFrame {
         for(int i = 0; i < m_Fields.length ; i++){                     
             for(int j = 0; j < m_Fields[0].length; j++){
                 if(m_Fields[i][j].f_isBlue){
+                    m_Fields[i][j].f_button.setOpaque(true);
                     m_Fields[i][j].f_button.setBackground(Color.BLUE);
                 }
                 else if(m_Fields[i][j].f_gameField){
@@ -298,6 +302,7 @@ public class Window extends javax.swing.JFrame {
                 }
                 else{
                     if(won){
+                        m_Fields[i][j].f_button.setOpaque(true);
                         m_Fields[i][j].f_button.setBackground(Color.green);
                     }                   
                 }
